@@ -80,6 +80,10 @@ test:
 #
 production:
   <<: *default
-  database: rails_quantified_self_production
-  username: rails_quantified_self
-  password: <%= ENV['RAILS_QUANTIFIED_SELF_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
