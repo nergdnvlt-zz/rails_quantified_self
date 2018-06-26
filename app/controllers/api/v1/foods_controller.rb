@@ -1,5 +1,6 @@
 class Api::V1::FoodsController < ApplicationController
-  before_action :set_food, only: [:update]
+  before_action :set_food, only: [:update, :destroy]
+
   def index
     render json: Food.all.as_json
   end
@@ -17,6 +18,11 @@ class Api::V1::FoodsController < ApplicationController
     @food.calories = food_params[:calories]
     @food.save!
     render json: @food.as_json
+  end
+
+  def destroy
+    @food.delete
+    render status: 204
   end
 
   private
