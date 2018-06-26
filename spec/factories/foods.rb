@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :food do
-    name "MyString"
-    calories 1
+    name "good food"
+    calories 88
   end
 end
