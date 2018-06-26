@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'a get request to foods#index' do
   describe 'when processed correctly' do
-    it 'gives a listing of all foods as JSON' do
+    it 'gives the food as JSON' do
       pear = Food.create(name: 'pear', calories: 33)
 
       get "/api/v1/foods/#{pear.id}"
@@ -13,6 +13,23 @@ describe 'a get request to foods#index' do
 
       expect(pear_response).to be_a Hash
       expect(pear_response).to eq({"id"=>1, "name"=>"pear", "calories"=>33})
+    end
+  end
+
+  describe 'gets a different food' do
+    it 'gives the associated food' do
+      create_list(:food, 5)
+      beer = Food.create(name: 'beer', calories: 35)
+
+      get "/api/v1/foods/#{beer.id}"
+
+      expect(response).to be_successful
+
+      beer_response = JSON.parse(response.body)
+
+      expect(beer_response).to be_a Hash
+      expect(beer_response["name"]).to eq("beer")
+      expect(beer_response["calories"]).to eq(35)
     end
   end
 

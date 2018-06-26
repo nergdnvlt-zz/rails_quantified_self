@@ -8,7 +8,6 @@ describe 'a get request to foods#index' do
       expect(response).to be_successful
 
       apricot_response = JSON.parse(response.body)
-      binding.pry
 
       expect(apricot_response).to be_a Hash
       expect(apricot_response["name"]).to eq("apricot")
