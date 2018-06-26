@@ -15,4 +15,15 @@ describe 'a get request to foods#index' do
       expect(pear_response).to eq({"id"=>1, "name"=>"pear", "calories"=>33})
     end
   end
+
+  describe 'when no food exists' do
+    it 'gives a 404 response' do
+      pear = Food.create(name: 'pear', calories: 33)
+
+      get "/api/v1/foods/88"
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+    end
+  end
 end
