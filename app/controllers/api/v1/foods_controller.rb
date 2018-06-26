@@ -8,11 +8,11 @@ class Api::V1::FoodsController < ApplicationController
   end
 
   def create
-    render json: Food.create(food_params).as_json
+    render json: Food.create!(food_params).as_json
   end
 
   private
-  
+
   def food_params
     params.require(:food).permit(:name, :calories)
   end
