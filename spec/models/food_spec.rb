@@ -5,4 +5,20 @@ describe Food do
     it { should validate_presence_of :name }
     it { should validate_presence_of :calories }
   end
+
+  describe 'instance methods' do
+    before(:each) do
+      @peach = Food.create!(name: 'peach', calories: 88)
+    end
+
+    it 'returns a hash of the attributes' do
+      peach = @peach.as_json
+
+      expect(peach).to eq({
+        id: 1,
+        name: 'peach',
+        calories: 88
+        })
+    end
+  end
 end
