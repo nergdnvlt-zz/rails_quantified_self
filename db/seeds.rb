@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+names = ['apple', 'banana', 'chashu', 'donut', 'eggs', 'flounder', 'goose', 'ham', 'ice cream', 'jalapeno', 'kiwi', 'lettuce']
+
+names.each do |name|
+  food = Food.create!(name: name, calories: (0..500).to_a.sample)
+  puts "#{food.name} added!"
+end
