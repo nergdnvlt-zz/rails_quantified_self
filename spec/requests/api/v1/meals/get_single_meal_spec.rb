@@ -24,4 +24,17 @@ describe 'a get request to meals#index' do
       expect(meal["foods"][1]["calories"]).to eq(88)
     end
   end
+
+  describe 'when not found' do
+    it 'returns a 404 status code' do
+      Meal.create!(name: 'Breakfast')
+      breakfast.foods.create!(name: 'pear', calories: 33)
+      breakfast.foods.create!(name: 'peach', calories: 88)
+
+      get '/api/v1/meals/88/foods'
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+    end
+  end
 end
