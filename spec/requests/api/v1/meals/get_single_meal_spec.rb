@@ -27,7 +27,7 @@ describe 'a get request to meals#index' do
 
   describe 'when not found' do
     it 'returns a 404 status code' do
-      Meal.create!(name: 'Breakfast')
+      breakfast = Meal.create!(name: 'Breakfast')
       breakfast.foods.create!(name: 'pear', calories: 33)
       breakfast.foods.create!(name: 'peach', calories: 88)
 
