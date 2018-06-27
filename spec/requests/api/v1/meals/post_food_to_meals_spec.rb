@@ -2,10 +2,10 @@ require 'rails_helper'
 
 describe 'a get request to meals#index' do
   describe 'when processed correctly' do
-    it 'gives a listing of all meals as JSON' do
+    it 'gives response message in JSON for successful addition' do
       breakfast = Meal.create!(name: 'Breakfast')
-
       pear = breakfast.foods.create!(name: 'pear', calories: 33)
+
       peach = Food.create!(name: 'peach', calories: 88)
 
       post "/api/v1/meals/#{breakfast.id}/foods/#{peach.id}"
@@ -16,6 +16,20 @@ describe 'a get request to meals#index' do
 
       expect(message).to be_a Hash
       expect(message["message"]).to eq("Successfully added FOODNAME to MEALNAME")
+    end
+  end
+
+  describe 'returns a 404 when' do
+    it 'the meal is not found' do
+      breakfast = Meal.create!(name: 'Breakfast')
+      pear = breakfast.foods.create!(name: 'pear', calories: 33)
+
+      apple = Food.create!(name: 'apple', calories: 88)
+
+      post "/api/v1/meals/88/foods/#{apple.id}"
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
     end
   end
 end
