@@ -15,7 +15,7 @@ describe 'a get request to meals#index' do
       message = JSON.parse(response.body)
 
       expect(message).to be_a Hash
-      expect(message).to eq({ "message": "Successfully added FOODNAME to MEALNAME" })
+      expect(message["message"]).to eq("Successfully added FOODNAME to MEALNAME")
     end
   end
 end
