@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'a get request to meals#index' do
+describe 'a post request to meals/meal_id/foods/food_id' do
   describe 'when processed correctly' do
     it 'gives response message in JSON for successful addition' do
       breakfast = Meal.create!(name: 'Breakfast')
