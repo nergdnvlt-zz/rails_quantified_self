@@ -14,7 +14,7 @@ describe 'a get request to meals#index' do
 
       meal = JSON.parse(response.body)
 
-      expect(meal).to be_a Array
+      expect(meal).to be_a Hash
 
       expect(meal["name"]).to eq("Breakfast")
       expect(meal["foods"]).to be_a Array
