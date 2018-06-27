@@ -31,5 +31,14 @@ describe 'a get request to meals#index' do
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
     end
+
+    it 'the food is not found' do
+      breakfast = Meal.create!(name: 'Breakfast')
+
+      post "/api/v1/meals/#{breakfast.id}/foods/88"
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+    end
   end
 end
