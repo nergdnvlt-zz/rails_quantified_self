@@ -126,7 +126,9 @@ PATCH /api/foods/{food_id}, params: { "food": { "name": "jerky", "calories": "20
 ```
 
 <br>
+
 ##### DELETE REQUESTS
+
 <br>
 To delete a food item:
 
