@@ -12,11 +12,7 @@
 #   puts "#{food.name} added!"
 # end
 
-breakfast = Meal.create!(name: 'Breakfast')
-# puts "#{breakfast.name} added!"
-snacks = Meal.create!(name: 'Snacks')
-# puts "#{snacks.name} added!"
-lunch = Meal.create!(name: 'Lunch')
-# puts "#{lunch.name} added!"
-dinner = Meal.create!(name: 'Dinner')
-# puts "#{dinner.name} added!"
+Meal.create(name: 'Breakfast')
+Meal.create(name: 'Snacks')
+Meal.create(name: 'Lunch')
+Meal.create(name: 'Dinner')
