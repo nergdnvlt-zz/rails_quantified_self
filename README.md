@@ -3,10 +3,10 @@
 # Fiver
 
 ### See The Active Site:
-Front End Production Site:
-[Quantified Self]([Quantified Self](http://quantified-self-fe.surge.sh/) <br>
+Front End Production Site:<br>
+[Quantified Self](http://quantified-self-fe.surge.sh/) <br>
 
-API Base URL:
+API Base URL:<br>
 [Quantified Self Rails API](http://rails-quantified-self-dev.us-west-2.elasticbeanstalk.com)<br>
 
 Pitch:
