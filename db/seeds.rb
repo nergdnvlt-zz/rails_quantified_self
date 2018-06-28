@@ -5,9 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-names = ['apple', 'banana', 'chashu', 'donut', 'eggs', 'flounder', 'goose', 'ham', 'ice cream', 'jalapeno', 'kiwi', 'lettuce']
+# names = ['apple', 'banana', 'chashu', 'donut', 'eggs', 'flounder', 'goose', 'ham', 'ice cream', 'jalapeno', 'kiwi', 'lettuce']
+#
+# names.each do |name|
+#   food = Food.create!(name: name, calories: (0..500).to_a.sample)
+#   puts "#{food.name} added!"
+# end
 
-names.each do |name|
-  food = Food.create!(name: name, calories: (0..500).to_a.sample)
-  puts "#{food.name} added!"
-end
+breakfast = Meal.create!(name: 'Breakfast')
+# puts "#{breakfast.name} added!"
+snacks = Meal.create!(name: 'Snacks')
+# puts "#{snacks.name} added!"
+lunch = Meal.create!(name: 'Lunch')
+# puts "#{lunch.name} added!"
+dinner = Meal.create!(name: 'Dinner')
+# puts "#{dinner.name} added!"
