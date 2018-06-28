@@ -4,7 +4,7 @@ class MealFood < ApplicationRecord
 
   def as_json
     {
-      "message": "Successfully added FOODNAME to MEALNAME"
+      "message": "Successfully added #{food.name} to #{meal.name}"
     }
   end
 end

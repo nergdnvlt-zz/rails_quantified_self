@@ -9,7 +9,7 @@ class Api::V1::MealFoodsController < ApplicationController
 
   def destroy
     @mealfood.delete
-    render json: { "message": "Successfully removed FOODNAME to MEALNAME" }
+    render json: { "message": "Successfully removed #{@food.name} from #{@meal.name}" }
   end
 
   private

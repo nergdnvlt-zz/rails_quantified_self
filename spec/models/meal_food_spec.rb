@@ -15,7 +15,7 @@ describe MealFood do
       message = mealfood.as_json
 
       expect(message).to be_a Hash
-      expect(message).to eq({ "message": "Successfully added FOODNAME to MEALNAME" })
+      expect(message).to eq({ "message": "Successfully added artichoke to snack" })
     end
   end
 end
