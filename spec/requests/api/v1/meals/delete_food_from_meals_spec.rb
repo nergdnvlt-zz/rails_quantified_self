@@ -14,7 +14,7 @@ describe 'a delete request to meals/meal_id/foods/food_id' do
       message = JSON.parse(response.body)
 
       expect(message).to be_a Hash
-      expect(message["message"]).to eq("Successfully removed FOODNAME to MEALNAME")
+      expect(message["message"]).to eq("Successfully removed peach from Breakfast")
     end
   end
 

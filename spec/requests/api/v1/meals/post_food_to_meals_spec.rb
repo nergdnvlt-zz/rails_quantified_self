@@ -15,7 +15,7 @@ describe 'a post request to meals/meal_id/foods/food_id' do
       message = JSON.parse(response.body)
 
       expect(message).to be_a Hash
-      expect(message["message"]).to eq("Successfully added FOODNAME to MEALNAME")
+      expect(message["message"]).to eq("Successfully added peach to Breakfast")
     end
   end
 
