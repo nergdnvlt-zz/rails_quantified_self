@@ -53,10 +53,13 @@ The food database includes full CRUD functionality at each of it's endpoints.
 ##### GET REQUESTS
 <br>
 To get the foods index:
+
 ```
 GET /api/v1/foods
 ```
+
 The foods will be returned in as JSON to look like:
+
 ```
 [
   {
@@ -72,16 +75,23 @@ The foods will be returned in as JSON to look like:
 ...
 ]
 ```
+
 <br>
+
 To get a single food:
+
 ```
 GET /api/v1/foods/{food_id}
 ```
+
 Example:
+
 ```
 GET /api/v1/foods/1
 ```
+
 will return a response body of:
+
 ```
 {
     "id": 1,
@@ -89,15 +99,18 @@ will return a response body of:
     "calories": 150
 }
 ```
+
 <br>
 
 
 ##### POST REQUESTS
 <br>
 To create a food item send:
+
 ```
 POST /api/v1/foods, params: { "food": { "name": "jerky", "calories": "250"} }
 ```
+
 This will return the food item as JSON
 <br>
 
@@ -107,16 +120,20 @@ This will return the food item as JSON
 NOTE: To update a food, you MUST pass both the name and calorie amount as parameters.
 
 To update a food:
+
 ```
 PATCH /api/foods/{food_id}, params: { "food": { "name": "jerky", "calories": "200"} }
 ```
+
 <br>
 ##### DELETE REQUESTS
 <br>
 To delete a food item:
+
 ```
 DELETE /api/foods/{food_id}
 ```
+
 It will return a message as JSON about the success of the deletion.
 
 
@@ -126,10 +143,13 @@ Meals has traditional RESTFUL routes for it's index and single meal.
 ##### GET REQUESTS
 <br>
 To get the foods index:
+
 ```
 GET /api/v1/meals
 ```
+
 The meals will be returned in as JSON to look like:
+
 ```
 [
   {
@@ -179,18 +199,23 @@ The meals will be returned in as JSON to look like:
 
 <br>
 For the single meal endpoint, per the spec, I wanted to be clear that the foods were the main focus of the meal. So the path emphasizes the forcus on foods.
+
 ```
 GET /api/v1/meals/{meal_id}/foods
 ```
 
 #### MealFoods
+
 The rest of the API's endpoints are to facilitate associating a food with a meal.
 
 ##### POST Requests
+
 ```
 POST /api/v1/meals/{meal_id}/foods/{food_id}
 ```
+
 This endpoint will route to the associated action (create) in the MealFoods controller and will create a database row associating the food to the meal. If successful it will return the following message:
+
 ```
 {
     "message": "Successfully added FOODNAME to MEALNAME"
@@ -198,11 +223,15 @@ This endpoint will route to the associated action (create) in the MealFoods cont
 ```
 
 ##### DELETE Requests
+
 To remove the association between a food and a meal make a delete request:
+
 ```
 DELETE /api/v1/meals/:meal_id/foods/:id
 ```
+
 It will return a JSON response of:
+
 ```
 {
     "message": "Successfully removed FOODNAME to MEALNAME"
@@ -210,7 +239,7 @@ It will return a JSON response of:
 ```
 
 
-
+## For Downloading and Running Yourself:
 
 ### Versions/Prerequisites
 ---
