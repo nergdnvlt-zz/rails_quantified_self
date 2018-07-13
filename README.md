@@ -1,6 +1,9 @@
 ### README
+---
 
 # RAILS - QUANTIFIED SELF
+
+---
 
 ### See The Active Site:
 Front End Production Site:<br>
@@ -17,14 +20,18 @@ This project is an introduction to true Gateway API Architecture. I am utilizing
 
 ![screenshot](screenshot.png)
 
+---
+
 ### Table Of Contents
 - [Database and Schema](#database-and-schema)
-- [API End Points](#api-end-points)
 - [Versions/Prerequisites](#versions-prerequisites)
 - [Setup](#setup)
 - [The Test Suite](#the-test-suite)
 - [Spinning Up A Server](#spinning-up-a-server)
+- [API End Points](#api-end-points)
 - [Authors](#authors)
+
+---
 
 ### Database and Schema
 ![screenshot](schema.png)
@@ -43,11 +50,105 @@ The second is foods, which each contain a name and amount of calories.
 
 And the third is MealFoods which is a joins table between meals and foods allowing a food to be a part of many meals and also allowing a meal to have many different foods.
 
+<br>
+
+---
+
+### Versions/Prerequisites
+
+
+##### Main:
+To Install and run this application please be aware of the following versions and requirements:
+- PostgreSQL 10+
+- Rails 5.2.0
+- Ruby 2.4.4
+
+###### Secondary:
+- ActiveRecord
+- PG
+- Puma
+
+---
+
+### Setup
+- First clone down this repository and change directory into the project directory:
+```
+git clone https://github.com/nergdnvlt/rails_quantified_self
+cd fiver
+```
+- Then in your command line run bundle to install the gem dependencies:
+```
+bundle
+```
+- Now setup your database and run the migrations to properly set up your database tables:
+```
+rake db:create
+rake db:migrate
+```
+- It's now time to seed the database with the required data:
+```
+rake db:seed
+```
+- At this point the project is set up. Explore at will.
+
+<br>
+
+---
+
+### The Test Suite
+
+#### Test Information
+
+##### Test Suite Components:
+- DatabaseCleaner
+- FactoryBot
+- Rspec
+- ShouldaMatchers
+
+#### Test Documentation and Tweaks
+
+- For additional documentation and the individual tests as the suite runs:
+```
+--format=documentation
+```
+
+##### About The Tests:
+ The test suite includes test for the following:
+- Model Level Testing
+- API Request Testing<br>
+These tests can be found in the following folder:
+```
+spec/models/
+spec/requests/api/v1/foods
+spec/requests/api/v1/meals
+```
+
+##### Running The Suite:
+- In order to run the test suite, from the root project folder simply run:
+```
+rspec
+```
+
+<br>
+
+___
+
+### Spinning Up a Server
+
+- Next spin up your server:
+```
+rails s
+```
+<br>
+
+
+---
+
 
 ### API End Points
 This is a restful API.
 
-#### Foods
+### Foods
 The food database includes full CRUD functionality at each of it's endpoints.
 
 ##### GET REQUESTS
@@ -139,7 +240,7 @@ DELETE /api/foods/{food_id}
 It will return a message as JSON about the success of the deletion.
 
 
-#### Meals
+### Meals
 Meals has traditional RESTFUL routes for it's index and single meal.
 
 ##### GET REQUESTS
@@ -206,7 +307,7 @@ For the single meal endpoint, per the spec, I wanted to be clear that the foods 
 GET /api/v1/meals/{meal_id}/foods
 ```
 
-#### MealFoods
+### MealFoods
 
 The rest of the API's endpoints are to facilitate associating a food with a meal.
 
@@ -240,92 +341,9 @@ It will return a JSON response of:
 }
 ```
 
-
-## For Downloading and Running Yourself:
-
-### Versions/Prerequisites
----
-##### Main:
-To Install and run this application please be aware of the following versions and requirements:
-- PostgreSQL 10+
-- Rails 5.2.0
-- Ruby 2.4.4
-
-###### Secondary:
-- ActiveRecord
-- PG
-- Puma
-
-### Setup
----
-- First clone down this repository and change directory into the project directory:
-```
-git clone https://github.com/nergdnvlt/rails_quantified_self
-cd fiver
-```
-- Then in your command line run bundle to install the gem dependencies:
-```
-bundle
-```
-- Now setup your database and run the migrations to properly set up your database tables:
-```
-rake db:create
-rake db:migrate
-```
-- It's now time to seed the database with the required data:
-```
-rake db:seed
-```
-- At this point the project is set up. Explore at will.
-
 <br>
 
-### The Test Suite
 ---
-
-#### Test Information
-
-##### Test Suite Components:
-- DatabaseCleaner
-- FactoryBot
-- Rspec
-- ShouldaMatchers
-
-#### Test Documentation and Tweaks
-
-- For additional documentation and the individual tests as the suite runs:
-```
---format=documentation
-```
-
-##### About The Tests:
- The test suite includes test for the following:
-- Model Level Testing
-- API Request Testing<br>
-These tests can be found in the following folder:
-```
-spec/models/
-spec/requests/api/v1/foods
-spec/requests/api/v1/meals
-```
-
-##### Running The Suite:
-- In order to run the test suite, from the root project folder simply run:
-```
-rspec
-```
-
-<br>
-
-### Spinning Up a Server
-___
-
-- Next spin up your server:
-```
-rails s
-```
-<br>
-
 
 ### Authors
 - [Tyler Lundgren](https://github.com/nergdnvlt)
