@@ -5,13 +5,6 @@
 
 ---
 
-### See The Active Site:
-Front End Production Site:<br>
-[Quantified Self](http://quantified-self-fe.surge.sh/) <br>
-
-API Base URL:<br>
-[Quantified Self Rails API](http://rails-quantified-self-dev.us-west-2.elasticbeanstalk.com)<br>
-
 Pitch:
 This app is a basic food/meal/calorie tracking application.
 
